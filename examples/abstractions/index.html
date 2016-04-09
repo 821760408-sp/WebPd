@@ -25,18 +25,19 @@
     <script>
       webPdExamples.init()
 
+      var patch
+
       $('form').submit(function(event) {
         event.preventDefault()
         var freq = parseFloat($('#freqVal').val())
         Pd.send(patch.patchId + '-frequency', [freq])
       })
 
-      var patch
       $.get('pd/main.pd', function(mainStr) {
-        $.get('pd/pink~.pd', function(pinkStr) {
+        $.get('pd/pink_customized~.pd', function(pinkStr) {
           
           // Loading the patch and abstraction
-          Pd.registerAbstraction('pink~', pinkStr)
+          Pd.registerAbstraction('pink_customized~', pinkStr)
           patch = Pd.loadPatch(mainStr)
           Pd.send(patch.patchId + '-diameter', [20])
 

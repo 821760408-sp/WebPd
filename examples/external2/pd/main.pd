@@ -1,7 +1,7 @@
 #N canvas 64 202 838 484 10;
 #X obj 274 18 soundfiler;
 #X obj 341 50 print LOADED;
-#X msg 274 -10 read -resize ../assets/samples/monster.wav SAMPLE;
+#X msg 274 -10 read -resize ../assets/samples/section-01.wav SAMPLE;
 #X obj 241 220 r bitDepth;
 #X obj 245 50 s SAMPCOUNT;
 #X obj 158 281 dac~;
